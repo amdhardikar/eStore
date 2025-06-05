@@ -1,59 +1,53 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 interface TextFieldProps {
+	labelName: string;
 	fieldName: string;
-	classes: string;
-	page: string; // Define the type of fieldName
+	fieldType: string;
+	placeHolder: string;
+	value: string;
+	changeHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	blurHandler?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	error?: boolean;
+	success?: boolean;
+	customClass?: string;
+	pageName?: string;
 }
 
-type FieldType = Record<string, string>;
-
-function TextField({ fieldName, classes, page }: TextFieldProps) {
-	const fieldType: FieldType = {
-		username: "text",
-		password: "password",
-		old_password: "password",
-		new_password: "password",
-		email: "email",
+function TextField({ labelName, fieldName, fieldType, customClass, pageName, placeHolder, value, changeHandler, error, success }: TextFieldProps) {
+	const renderForgotPassword = () => {
+		if (pageName == 'login' && fieldName == 'password') {
+			return (
+				<Link to={{ pathname: '/forgot' }} className='font-semibold text-base'>
+					Forgot password?
+				</Link>
+			);
+		}
 	};
 
 	return (
 		<>
-			<div className={`flex items-center justify-between ${classes}`}>
-				<label
-					htmlFor={fieldName}
-					className="block text-base font-normal text-gray-900 capitalize"
-				>
-					{fieldName == "old_password"
-						? "Old Password"
-						: fieldName == "new_password"
-						? "New Password"
-						: fieldName}
-				</label>
-				{page == "login" && fieldName == "password" ? (
-					<div className="text-base">
-						<Link
-							to={{
-								pathname: "/forgot",
-							}}
-							className="font-semibold"
-						>
-							Forgot password?
-						</Link>
-					</div>
-				) : (
-					<></>
-				)}
-			</div>
-			<div className="mt-2">
-				<input
-					id={fieldName}
-					name={fieldName}
-					type={fieldType[fieldName]}
-					required
-					placeholder="Enter username"
-					className="block w-full rounded-[3px] text-base placeholder:font-normal font-semibold bg-white px-3 py-2  text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400"
-				/>
+			<div className={`${customClass}`}>
+				<div className={`flex items-center justify-between`}>
+					<label htmlFor={fieldName} className='block text-base font-normal text-gray-900 capitalize'>
+						{labelName}
+					</label>
+					{renderForgotPassword()}
+				</div>
+				<div className='mt-2'>
+					<input
+						id={fieldName}
+						name={fieldName}
+						type={fieldType}
+						value={value}
+						required
+						placeholder={placeHolder}
+						onChange={changeHandler}
+						className={`block w-full rounded-[3px] text-base placeholder:font-normal font-semibold px-3 py-2  text-gray-900 outline-1 -outline-offset-1  placeholder:text-gray-400 ${
+							error ? 'outline-red-500 outline-2 bg-red-50' : 'outline-gray-300 bg-gray-50'
+						} ${success ? 'outline-green-500 bg-green-50' : 'outline-gray-300 bg-gray-50'}`}
+					/>
+				</div>
 			</div>
 		</>
 	);
