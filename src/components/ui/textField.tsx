@@ -15,6 +15,7 @@ interface TextFieldProps {
 }
 
 function TextField({ labelName, fieldName, fieldType, customClass, pageName, placeHolder, value, changeHandler, error, success }: TextFieldProps) {
+
 	const renderForgotPassword = () => {
 		if (pageName == 'login' && fieldName == 'password') {
 			return (
