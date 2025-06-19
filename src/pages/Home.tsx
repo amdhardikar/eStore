@@ -9,7 +9,7 @@ import ReturnIcon from '../assets/return-icon.svg';
 import SupportIcon from '../assets/support-icon.svg';
 import TruckIcon from '../assets/truck-icon.svg';
 import FirstHeroImage from '../assets/hero-image-first.jpg';
-
+import LeartherShoe from '../assets/learther-shoe.jpg';
 
 function Home() {
 	return (
@@ -94,7 +94,7 @@ function Home() {
 							<p className='assurance-info'>perfect for any occasion</p>
 						</div>
 						<div className='assurance-card'>
-							<img className='assurance-icon'src={SupportIcon} alt='' />
+							<img className='assurance-icon' src={SupportIcon} alt='' />
 							<p className='assurance-title'>online support</p>
 							<p className='assurance-info'>24/7 live chat available</p>
 						</div>
@@ -108,12 +108,24 @@ function Home() {
 						<h2>trending now</h2>
 					</div>
 					<div className='trending-body'>
-						<div className='trending-card card-1'></div>
-						<div className='trending-card card-2'></div>
-						<div className='trending-card card-3'></div>
-						<div className='trending-card card-4'></div>
-						<div className='trending-card card-5'></div>
-						<div className='trending-card card-6'></div>
+						<div className='trending-card card-1'>
+							<img src={LeartherShoe} alt='' />
+						</div>
+						<div className='trending-card card-2'>
+							<img src={LeartherShoe} alt='' />
+						</div>
+						<div className='trending-card card-3'>
+							<img src={LeartherShoe} alt='' />
+						</div>
+						<div className='trending-card card-4'>
+							<img src={LeartherShoe} alt='' />
+						</div>
+						<div className='trending-card card-5'>
+							<img src={LeartherShoe} alt='' />
+						</div>
+						<div className='trending-card card-6'>
+							<img src={LeartherShoe} alt='' />
+						</div>
 					</div>
 				</div>
 			</section>

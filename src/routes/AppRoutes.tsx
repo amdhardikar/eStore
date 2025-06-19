@@ -8,11 +8,11 @@ function AppRoutes() {
 	return (
 		<Router>
 			<Routes>
-				{/* <Route path='/' element={<Login />} />
+				<Route path='/' element={<Home />} />
+				<Route path='/home' element={<Home />} />
 				<Route path='/login' element={<Login />} />
 				<Route path='/register' element={<Register />} />
-				<Route path='/forgot' element={<ForgotPassword />} /> */}
-				<Route path='/' element={<Home />} />
+				<Route path='/forgot' element={<ForgotPassword />} />
 			</Routes>
 		</Router>
 	);
