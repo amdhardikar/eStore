@@ -10,7 +10,7 @@ import SupportIcon from '../assets/support-icon.svg';
 import TruckIcon from '../assets/truck-icon.svg';
 import FirstHeroImage from '../assets/hero-image-first.jpg';
 import LeartherShoe from '../assets/learther-shoe.jpg';
-
+import Footer from '../components/ui/footer.tsx';
 function Home() {
 	return (
 		<>
@@ -128,7 +128,8 @@ function Home() {
 						</div>
 					</div>
 				</div>
-			</section>
+         </section>
+         <Footer />
 		</>
 	);
 }
