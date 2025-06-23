@@ -1,28 +1,25 @@
 .footer-section {
-	
 	display: flex;
 	flex-wrap: wrap;
 	background-color: #ffffff;
 	color: #222;
 	padding: 40px 60px;
-	font-family: 'Inter', sans-serif;
 	border-top: 1px solid #eee;
-   span {
-		font-family: 'Playfair Display', serif;
+	span {
+
 	}
 	&-logo {
 		flex: 1 1 25%;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
 		justify-content: flex-start;
-		padding: 20px;
+		padding: 5px 0;
 		position: relative;
 
 		&-text {
-			margin-top: 5%;
 			margin-bottom: 20px;
 			span {
+				font-family: 'Playfair Display', serif;
 				text-transform: uppercase;
 				font-size: 50px;
 				font-weight: 700;
@@ -91,26 +88,28 @@
 
 				li {
 					margin: 6px 0;
+					a > span {
+						font-family: 'Figtree', sans-serif;
+					}
 				}
 			}
 		}
 
 		&--heading {
-			font-size: 18px;
-			font-weight: 600;
+			font-family: 'Playfair Display', serif;
+			font-size: 20px;
+			font-weight: 700;
 			margin-bottom: 10px;
-			color: #000;
 			display: inline-block;
 		}
 		&--text {
-			font-size: 14px;
+			// font-size: 14px;
 			font-weight: 400;
-			color: #555;
 			display: inline-block;
 			line-height: 1.5;
 			transition: color 0.3s ease;
 			&:hover {
-				color: #000;
+				font-weight: 600;
 			}
 		}
 	}

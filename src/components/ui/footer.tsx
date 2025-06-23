@@ -110,7 +110,7 @@ function Footer() {
 								</li>
 								<li>
 									<a href='/faq'>
-										<span className='footer-section-links--text'>Faqs</span>
+										<span className='footer-section-links--text'>Frequent Questions</span>
 									</a>
 								</li>
 							</ul>
@@ -139,7 +139,7 @@ function Footer() {
 			</div>
 			<div className='footer-bottom'>
 				<div className='footer-bottom-line'></div>
-				<div className='footer-bottom-text'>© Copyright {new Date().getFullYear()} All rights reserved. Made by developers</div>
+				<div className='footer-bottom-text'>© Copyright {new Date().getFullYear()} All rights reserved. Made by Aamod & Harshit</div>
 			</div>
 		</>
 	);
