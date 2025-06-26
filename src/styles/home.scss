@@ -1,260 +1,66 @@
-@use './theme.scss' as theme;
+@use './header.scss' as header;
+@use './hero.scss' as hero;
+@use './assurance.scss' as assurance;
+@use './footer.scss' as footer;
+@use './trending.scss' as trending;
+@use './newsletter.scss' as newsletter;
 
-.header {
-	width: 100%;
-	background-color: #000000e0;
-	position: fixed;
-	color: theme.$white-color;
-	z-index: 2;
+.brand {
+	padding: 40px 0;
+	overflow: hidden;
+	position: relative;
 
-	.header-container {
-		position: relative;
+	.brand-track {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		max-width: 1800px;
-		margin: auto;
-
-		.header-nav-left,
-		.header-nav-right {
-			display: flex;
-			align-items: center;
-
-			.header-nav-links {
-				height: 90px;
-				display: flex;
-				align-items: center;
-				gap: 40px;
-				list-style: none;
-
-				li {
-					font-size: 18px;
-					text-transform: uppercase;
-
-					img {
-						width: 25px;
-					}
-
-					&:hover {
-						cursor: pointer;
-						font-weight: 700;
-					}
-				}
-			}
+		width: fit-content;
+		display: flex;
+		animation: scroll-left 20s linear infinite;
+		margin: 10px 0px;
+		
+      &.reverse {
+			animation: scroll-right 20s linear infinite;
 		}
 
-		.header-nav-center {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
+      &:hover {
+         animation-play-state: paused;
+      }
+
+		.logo-track {
+			flex: 0 0 300px;
+			height: 100px;
 			display: flex;
-			align-items: center;
 			justify-content: center;
-
-			span {
-				text-transform: uppercase;
-				font-family: 'Playfair Display';
-				font-size: 35px;
-				font-weight: 700;
-				letter-spacing: -2px;
-			}
-		}
-	}
-}
-
-.hero {
-	width: 100%;
-
-	&::before {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		height: 30%;
-		background: linear-gradient(to top, rgba(0, 0, 0, 0.808), transparent);
-		pointer-events: none;
-	}
-
-	.hero-container {
-		height: 100vh;
-		width: 100%;
-
-		.hero-container-body {
-			position: absolute;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			top: 60%;
-			left: 50%;
-			width: 80%;
-			transform: translate(-50%, -50%);
-
-			.hero-body-main {
-				h1 {
-					color: theme.$white-color;
-					font-family: 'Playfair Display', serif;
-					text-align: left;
-					font-weight: 700;
-					font-size: 6rem;
-					text-transform: capitalize;
-
-					span {
-						font-size: 3rem;
-						font-weight: 100;
-						display: block;
-					}
-				}
-
-				.hero-button {
-					width: max-content;
-					margin-top: 30px;
-					outline: none;
-					background: theme.$black-color;
-					padding: 15px 35px;
-					font-size: 22px;
-					border-radius: 10px;
-					color: theme.$white-color;
-					text-transform: capitalize;
-					font-weight: 700;
-					transition: all 0.8s ease;
-
-					&:hover {
-						color: theme.$black-color;
-						font-weight: 700;
-						background-color: theme.$white-color;
-					}
-				}
-			}
-
-			.hero-body-navigation {
-				bottom: 10%;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				margin-top: 15%;
-
-				.hero-body-page {
-					font-size: 30px;
-					font-weight: 800;
-					color: theme.$white-color;
-				}
-
-				.hero-body-btngroup {
-					display: flex;
-					justify-content: space-between;
-					width: 110px;
-
-					img {
-						width: 45px;
-
-						&:hover {
-							cursor: pointer;
-						}
-					}
-				}
-			}
-		}
-
-		.hero-container-background {
-			height: 100vh;
-			width: 100%;
+			align-items: center;
+			background-color: #eee;
+			margin: 0 5px;
 
 			img {
-				height: 100%;
-				width: 100%;
-				object-fit: cover;
-				object-position: center 0%;
+				padding: 0px 60px;
+				max-height: 60px;
+				max-width: 100%;
+				object-fit: contain;
+			}
+
+			.logo-3 {
+				max-height: 160px;
 			}
 		}
 	}
 }
 
-.assurance {
-	padding: 60px 0;
-
-	.assurance-container {
-		max-width: 1800px;
-		margin: auto;
-
-		.assurance-body {
-			margin-top: 60px;
-			height: 300px;
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			grid-auto-flow: row;
-
-			.assurance-card {
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-				align-items: center;
-				padding: 40px;
-
-				.assurance-icon {
-					width: 60px;
-				}
-
-				.assurance-title {
-					margin-top: 20px;
-					text-transform: capitalize;
-					font-size: 28px;
-					font-weight: 600;
-				}
-
-				.assurance-info {
-					text-transform: capitalize;
-					font-size: 23px;
-				}
-
-				&:not(:last-child) {
-					border-right: 2px solid theme.$light-gray-border;
-				}
-			}
-		}
+@keyframes scroll-left {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
 	}
 }
-
-.trending {
-	padding: 60px 0;
-
-	.trending-container {
-		max-width: 1800px;
-		margin: auto;
-
-		.trending-title {
-			width: 100%;
-			text-align: center;
-
-			h2 {
-				font-size: 3rem;
-				font-family: 'Playfair Display', serif;
-				text-transform: capitalize;
-			}
-		}
-
-		.trending-body {
-			margin-top: 60px;
-			height: 900px;
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: repeat(2, 1fr);
-			grid-auto-flow: row;
-			gap: 20px;
-
-			.trending-card {
-				background-color: theme.$white-color;
-			}
-
-			.card-5 {
-				grid-column: 1 / 3;
-				grid-row: 2;
-			}
-
-			.card-6 {
-				grid-column: 3 / 5;
-				grid-row: 2;
-			}
-		}
+@keyframes scroll-right {
+	0% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0%);
 	}
 }

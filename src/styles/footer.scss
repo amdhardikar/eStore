@@ -1,0 +1,191 @@
+@use 'theme.scss' as theme;
+
+.footer {
+   display: flex;
+   flex-direction: column;
+   border-top: 1px solid #eee;
+   
+   &-container {
+      padding: 40px 0px;
+      width: 1800px;
+      margin: auto;
+      display: flex;
+      color: theme.$black-color;
+      
+      &-logo {
+         width: 20%;
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+   
+         &-text {
+            margin-bottom: 20px;
+            span {
+               font-family: 'Playfair Display', serif;
+               text-transform: uppercase;
+               font-size: 50px;
+               font-weight: 700;
+               letter-spacing: -2px;
+            }
+         }
+   
+         &-social {
+            display: flex;
+            gap: 16px;
+            margin-top: 10px;
+   
+            a {
+               display: inline-flex;
+               align-items: center;
+               justify-content: center;
+               background-color: #f5f5f5;
+               border-radius: 50%;
+               width: 38px;
+               height: 38px;
+               transition: background-color 0.3s ease;
+   
+               &:hover {
+                  background-color: #999695;
+               }
+   
+               img {
+                  width: 20px;
+                  height: 20px;
+                  object-fit: contain;
+                  filter: grayscale(100%) brightness(0.3);
+                  transition: filter 0.3s ease;
+                  a:hover & {
+                     filter: brightness(2) grayscale(0);
+                  }
+               }
+            }
+         }
+      }
+   
+      &-links {
+         width: 80%;
+         display: flex;
+         flex-wrap: wrap;
+         gap: 30px;
+         justify-content: space-between;
+         padding: 20px 0;
+   
+         &-container {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+         }
+   
+         &--block {
+            flex: 1 1 200px;
+            margin-bottom: 20px;
+   
+            ul {
+               list-style: none;
+               padding: 0;
+               margin-top: 10px;
+   
+               li {
+                  margin: 6px 0;
+                  a > span {
+                     font-family: 'Figtree', sans-serif;
+                  }
+               }
+            }
+         }
+   
+         &--heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: inline-block;
+         }
+         &--text {
+            // font-size: 14px;
+            font-weight: 400;
+            display: inline-block;
+            line-height: 1.5;
+            transition: color 0.3s ease;
+            &:hover {
+               font-weight: 600;
+            }
+         }
+      }
+      &-contact-redirect {
+         display: block;
+         margin-top: 5px;
+         font-size: 14px;
+         font-weight: 600;
+         &:hover {
+            text-decoration: underline;
+         }
+      }
+   }
+   .footer-bottom {
+      border-top: 1px solid #e0e0e0;
+      padding: 10px 0px;
+
+      &-text {
+         text-align: center;
+         font-size: 14px;
+         color: #666;
+         font-weight: 400;
+      }
+   
+      @media (max-width: 768px) {
+         &-text {
+            text-align: center;
+            font-size: 13px;
+         }
+      }
+   }
+}
+
+@media (max-width: 992px) {
+	.footer-container {
+		flex-direction: column;
+		align-items: center;
+		padding: 30px;
+
+		&-logo,
+		&-links {
+			flex: 1 1 100%;
+			text-align: center;
+		}
+
+		&-links {
+			&--block {
+				flex: 1 1 100%;
+				margin: 15px 0;
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.footer-container {
+		padding: 20px;
+
+		&-logo-text span {
+			font-size: 50px;
+		}
+
+		&-links--heading {
+			font-size: 16px;
+		}
+
+		&-links--block ul li a {
+			font-size: 14px;
+		}
+	}
+}

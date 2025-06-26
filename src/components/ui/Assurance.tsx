@@ -1,3 +1,4 @@
+import '../../styles/assurance.scss';
 import GiftIcon from '../../assets/gift-icon.svg';
 import ReturnIcon from '../../assets/return-icon.svg';
 import SupportIcon from '../../assets/support-icon.svg';

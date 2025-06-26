@@ -1,3 +1,4 @@
+import '../../styles/hero.scss'
 import LeftArrowIcon from '../../assets/left-arrow-icon.svg';
 import RightArrowIcon from '../../assets/right-arrow-icon.svg';
 import FirstHeroImage from '../../assets/hero-image-first.jpg';

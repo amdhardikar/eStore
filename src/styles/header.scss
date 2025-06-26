@@ -1,0 +1,63 @@
+@use 'theme.scss' as theme;
+
+.header {
+	width: 100%;
+	background-color: #fffffff6;
+	position: fixed;
+	color: theme.$black-color;
+	z-index: 2;
+
+	.header-container {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-width: 1800px;
+		margin: auto;
+
+		.header-nav-left,
+		.header-nav-right {
+			display: flex;
+			align-items: center;
+
+			.header-nav-links {
+				height: 90px;
+				display: flex;
+				align-items: center;
+				gap: 40px;
+				list-style: none;
+
+				li {
+					font-size: 18px;
+					text-transform: uppercase;
+
+					img {
+						width: 25px;
+					}
+
+					&:hover {
+						cursor: pointer;
+						font-weight: 700;
+					}
+				}
+			}
+		}
+
+		.header-nav-center {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			span {
+				text-transform: uppercase;
+				font-family: 'Playfair Display';
+				font-size: 35px;
+				font-weight: 700;
+				letter-spacing: -2px;
+			}
+		}
+	}
+}

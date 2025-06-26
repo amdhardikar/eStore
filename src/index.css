@@ -9,6 +9,7 @@
 
 * {
 	font-family: 'Figtree', sans-serif;
+   box-sizing: border-box;
 }
 
 body {

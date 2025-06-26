@@ -1,3 +1,4 @@
+import '../../styles/header.scss'
 import SearchIcon from '../../assets/search-icon.svg';
 import ShoppingBagIcon from '../../assets/shopping-bag-icon.svg';
 import UserIcon from '../../assets/user-icon.svg';

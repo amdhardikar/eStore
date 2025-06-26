@@ -1,0 +1,46 @@
+@use 'theme.scss' as theme;
+
+.assurance {
+	padding: 40px 0;
+
+	.assurance-container {
+		max-width: 1800px;
+		margin: auto;
+
+		.assurance-body {
+			margin-top: 60px;
+			height: 300px;
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-auto-flow: row;
+
+			.assurance-card {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding: 40px;
+
+				.assurance-icon {
+					width: 50px;
+				}
+
+				.assurance-title {
+					margin-top: 20px;
+					text-transform: capitalize;
+					font-size: theme.$text-size-xl;
+					font-weight: 600;
+				}
+            
+				.assurance-info {
+               text-transform: capitalize;
+               font-size: theme.$text-size-lg;
+				}
+
+				&:not(:last-child) {
+					border-right: 2px solid theme.$light-gray-border;
+				}
+			}
+		}
+	}
+}

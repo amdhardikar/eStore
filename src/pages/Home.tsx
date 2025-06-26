@@ -1,46 +1,38 @@
 import '../styles/home.scss';
 
-import LeartherShoe from '../assets/learther-shoe.jpg';
 import Header from '../components/ui/Header.tsx';
-import Footer from '../components/ui/Footer.tsx';
 import Hero from '../components/ui/Hero.tsx';
 import Assurance from '../components/ui/Assurance.tsx';
+import Footer from '../components/ui/footer.tsx';
+import Trending from '../components/ui/Trending.tsx';
+import NewsLetter from '../components/ui/NewsLetter.tsx';
 
 function Home() {
+	const logos = ['/brands/Albany-black.svg', '/brands/cambridge-black.svg', '/brands/Hamilton-black.svg', '/brands/file.svg', '/brands/KOBE-black.svg', '/brands/Montreal-black.svg'];
+
 	return (
 		<>
 			<Header />
 			<Hero />
 			<Assurance />
-
-			<section className='trending'>
-				<div className='trending-container'>
-					<div className='trending-title'>
-						<h2>trending now</h2>
-					</div>
-					<div className='trending-body'>
-						<div className='trending-card card-1'>
-							<img src={LeartherShoe} alt='' />
+			<Trending />
+			<div className='brand'>
+				<div className='brand-track'>
+					{[...logos, ...logos, ...logos].map((src, index) => (
+						<div className='logo-track' key={index}>
+							<img className={`logo-${index}`} src={src} alt={`Logo ${index}`} />
 						</div>
-						<div className='trending-card card-2'>
-							<img src={LeartherShoe} alt='' />
-						</div>
-						<div className='trending-card card-3'>
-							<img src={LeartherShoe} alt='' />
-						</div>
-						<div className='trending-card card-4'>
-							<img src={LeartherShoe} alt='' />
-						</div>
-						<div className='trending-card card-5'>
-							<img src={LeartherShoe} alt='' />
-						</div>
-						<div className='trending-card card-6'>
-							<img src={LeartherShoe} alt='' />
-						</div>
-					</div>
+					))}
 				</div>
-			</section>
-
+				<div className='brand-track reverse'>
+					{[...logos, ...logos, ...logos].map((src, index) => (
+						<div className='logo-track' key={index}>
+							<img className={`logo-${index}`} src={src} alt={`Logo ${index}`} />
+						</div>
+					))}
+				</div>
+			</div>
+			<NewsLetter />
 			<Footer />
 		</>
 	);

@@ -1,0 +1,77 @@
+@use 'theme.scss' as theme;
+
+.newsletter {
+	padding: 40px 0px;
+	background-color: theme.$white-color;
+	color: theme.$black-color;
+
+	&-container {
+		max-width: 1800px;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		&--heading {
+			h2 {
+				font-size: theme.$text-size-2xl;
+				font-weight: 600;
+				font-family: 'Playfair display', serif;
+				text-transform: capitalize;
+			}
+			p {
+				font-size: theme.$text-size-lg;
+				margin: 20px 0px;
+			}
+		}
+
+		&--body {
+			margin-top: 30px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			width: 25%;
+			height: 50%;
+			gap: 30px;
+			input {
+				all: unset;
+				width: calc(100% - 40px);
+				border: 2px solid theme.$light-gray-border;
+				background-color: white;
+				padding: 10px 20px;
+				border-radius: 5px;
+				text-align: left;
+				outline: none;
+				color: theme.$black-color;
+				font-weight: 500;
+            transition: all 0.4s ease-in-out;
+            &::placeholder {
+               color: rgb(128, 128, 128)
+            }
+            &:focus {
+               border: 2px solid theme.$black-color;
+            }
+			}
+			button {
+				padding: 15px 20px;
+				width: 100%;
+				background-color: theme.$black-color;
+				color: theme.$white-color;
+				text-transform: uppercase;
+				font-weight: 700;
+				letter-spacing: 1px;
+				border-radius: 5px;
+				cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+				&:hover {
+					transform: scale(1.05);
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.356);
+				}
+			}
+		}
+	}
+}
