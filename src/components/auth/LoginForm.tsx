@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import FormButton from '../ui/formButton';
-import TextField from '../ui/textField';
+import FormButton from '../ui/FormButton';
+import TextField from '../ui/TextField';
 import { useState } from 'react';
 
 function LoginForm() {

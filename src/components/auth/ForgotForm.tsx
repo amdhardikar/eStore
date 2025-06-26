@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import FormButton from '../ui/formButton';
-import TextField from '../ui/textField';
+import FormButton from '../ui/FormButton';
+import TextField from '../ui/TextField';
 import { useState } from 'react';
 
 function ForgotForm() {
@@ -26,7 +26,7 @@ function ForgotForm() {
 	};
 
 	return (
-		<form  className='w-md flex flex-col p-10 rounded-[3px] bg-transparent' onSubmit={validateForm}>
+		<form className='w-md flex flex-col p-10 rounded-[3px] bg-transparent' onSubmit={validateForm}>
 			<h2 className='text-center text-4xl font-bold tracking-tight text-gray-900'>Change Password</h2>
 			<TextField fieldName='username' fieldType='text' labelName='Username' placeHolder='Enter username' value={username} customClass='mt-10' changeHandler={validateFields} />
 			<TextField fieldName='oldPassword' fieldType='password' labelName='Old password' placeHolder='Enter old password' value={oldPassword} customClass='mt-6' changeHandler={validateFields} />

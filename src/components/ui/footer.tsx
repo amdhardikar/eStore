@@ -1,4 +1,4 @@
-import '../../styles/footer.scss';
+import '../../styles/component/footer.scss';
 import FbLogo from '../../assets/fb-logo.svg'
 import XLogo from '../../assets/x-logo.svg';
 import InstagramLogo from '../../assets/instagram-logo.svg';
